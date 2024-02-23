@@ -1,13 +1,8 @@
 import Heading from "../ui/Heading";
 import Row from "../ui/Row";
 import CabinTable from "../features/cabins/CabinTable";
-import { useEffect } from "react";
-import { getCabins } from "../services/apiCabins";
 
 function Cabins() {
-  useEffect(() => {
-    getCabins().then((data) => console.log(data));
-  }, []);
   return (
     <>
       <Row type="horizontal">
@@ -15,7 +10,9 @@ function Cabins() {
         <p>Filter/sort</p>
       </Row>
 
-      <Row>{/* <CabinTable /> */}</Row>
+      <Row>
+        <CabinTable />
+      </Row>
     </>
   );
 }
